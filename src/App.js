@@ -1,16 +1,23 @@
+import { useState } from 'react';
 import './App.css';
+import { PruebaContext } from './context/PruebaContext';
 import { AppRouter } from './routing/AppRouter';
 
 function App() {
+
+  const curso = {
+    id: 1,
+    titulo: "Master en TypeScript",
+    contenido: "Muchas horas de contenido"
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
 
-       <h1> Aprendiendo el useContext</h1>
+      <PruebaContext.Provider value = {curso}>
+        <AppRouter />
+      </PruebaContext.Provider>
 
-       <AppRouter />
-      
-      </header>
     </div>
   );
 }

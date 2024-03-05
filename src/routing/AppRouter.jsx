@@ -9,24 +9,51 @@ import { Login } from '../components/Login';
 export const AppRouter = () => {
     return (
         <BrowserRouter>
+            <header className="header">
+                {/* MENU DE NAVEGACION */}
+                <nav>
+                    <div id="logo">
+                        <h2>Aprendiendo React Context</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            <NavLink to="/"> Inicio</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/articulos"> Artículos</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/acercade"> Acerca de..</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/contacto"> Contacto</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/login"> Identifícate</NavLink>
+                        </li>
+                    </ul>
+                </nav>
 
-            {/* MENU DE NAVEGACION */}
+            </header>
+            <section className="content">
+                {/* CONFIGURAR RUTAS */}
 
-            {/* CONFIGURAR RUTAS */}
+                <Routes>
+                    <Route path="/" element={<Inicio />} />
+                    <Route path="/Inicio" element={<Inicio />} />
+                    <Route path="Articulos" element={<Articulos />} />
+                    <Route path="AcercaDe" element={<AcercaDe />} />
+                    <Route path="Contacto" element={<Contacto />} />
+                    <Route path="Login" element={<Login />} />
 
-            <Routes>
-                <Route path="/" element={<Inicio />} />
-                <Route path="/Inicio" element={<Inicio />} />
-                <Route path="Articulos" element={<Articulos />} />
-                <Route path="AcercaDe" element={<AcercaDe />} />
-                <Route path="Contacto" element={<Contacto />} />
-                <Route path="Login" element = {<Login />} />
-                
-                <Route path="*" element={(<div>
-                    <h1> ESTA PÁGINA NO EXISTE </h1>
-                </div>)} />
-                
-            </Routes>
+                    <Route path="*" element={(<div>
+                        <h1> ESTA PÁGINA NO EXISTE </h1>
+                    </div>)} />
+
+                </Routes>
+
+            </section>
+
 
         </BrowserRouter>
     )
