@@ -38,7 +38,7 @@ export const AppRouter = () => {
                                     <NavLink to="/">{usuario.nick}</NavLink>
                                 </li>
                                 <li>
-                                    <a href="#" onClick = { e => {
+                                    <a href="#" onClick={e => {
                                         e.preventDefault();
                                         setUsuario({})
                                     }}>Cerrar Sesión</a>
